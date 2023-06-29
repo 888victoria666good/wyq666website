@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 引入样式文件 -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <style>
+    /* .navbar-jack{
+    background:rgba(255, 234, 0, 0.556);
+  } */
+
+    /* 放大镜颜色 */
+    .glyphicon.glyphicon-search {
+      color: blueviolet;
+    }
+
+    /* 输入框 */
+    .btn-wyq-search:focus {
+      border-color: #ccc;
+      outline: none;
+      /* 轮廓 */
+      box-shadow: none;
+    }
+
+    body {
+      padding-top: 50px;
+    }
+
+    .carousel-wyq img {
+      width: 100%;
+    }
+
+    /*路径导航 */
+    .main-content {
+      margin-top: 20px;
+    }
+
+    .courses img {
+      width: 100%;
+    }
+
+    /* 页脚 */
+    .page-footer {
+      padding: 40px 0;
+      /* 离分页有40px距离 */
+      color: #fff;
+      background: #333;
+    }
+
+    /* 超链接颜色 */
+    .page-footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .page-footer ul {
+      padding: 0;
+      /* 把标题和列表对齐 */
+      list-style: none;
+      /* 去掉超链接前的圆点 */
+    }
+
+    .page-footer h3 {
+      font-size: 1.2em;
+    }
+
+    .footer-copyright {
+      margin-top: 30px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <!--1、导航栏 -->
+  <!-- navbar-inverse,可以修改类名进而设置颜色 ：navbar-jack-->
+  <nav class="navbar navbar-default navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <!-- 三条杠按钮 -->
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">秋子</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">首页<span class="sr-only">(current)</span></a></li>
+          <li><a href="#">教程</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">视频<span class="caret"></span></a>
+            <!-- 下拉列表 -->
+            <ul class="dropdown-menu">
+              <li><a href="#">HTML5</a></li>
+              <li><a href="#">JS</a></li>
+              <li><a href="#">CSS</a></li>
+              <!-- 分割线 -->
+              <li role="separator" class="divider"></li>
+              <li><a href="#">jquery</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">bootstrap</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- 搜索栏 -->
+        <form class="navbar-form navbar-left">
+          <div class="input-group">
+            <input type="text" class="form-control btn-wyq-search" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-wyq-search" type="button">
+                <!--字符按钮 -->
+                <i class="glyphicon glyphicon-search"></i>
+              </button>
+            </span>
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#" data-toggle="modal" data-target="#loginModal">登录</a></li>
+          <li><a href="#">注册</a></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <!--2、轮播图 -->
+  <div id="carousel-example-generic" class="carousel slide carousel-wyq" data-ride="carousel">
+    <!-- 底部圆点按钮（点击切换图片） -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- 轮播图图片 -->
+    <div class="carousel-inner" role="listbox">
+      <!-- （1） -->
+      <div class="item active">
+        <!-- 屏幕宽度不同，图片不同 -->
+        <picture>
+          <!-- 当窗口宽度大于等于992，我们使用play01.jpg -->
+          <source srcset="./images/play01.jpg" media="(min-width:992px)">
+          <!-- 当窗口宽度大于等于768，我们使用play01-sm.jpg -->
+          <source srcset="./images/play01-sm.jpg" media="(min-width:768px)">
+          <!-- 默认图片：窗口宽度小于768px -->
+          <img src="./images/play01-xs.jpg" alt="">
+        </picture>
+        <div class="carousel-caption">
+          <h2>第一部分</h2>
+          <p>
+            友已回君我说杨，车未的次秦，开苦者杨京笔的中，禀你瞠，资秦死叹无不发魂杨之的十未也命房那，掸亡这我，二你惊化要厄三郭可的设都正，十价勉安张韦灰治人六领，韩谷年气衣化本罪洞才之，里上鲜二病了，长即宋你极郭洞才希价德未匹罪能，拿厄投勇必倒望，惊了气生有互了牙。
+          </p>
+        </div>
+      </div>
+
+      <!-- （2） -->
+      <div class="item">
+        <picture>
+          <source srcset="./images/play02.jpg" media="(min-width:992px)">
+          <source srcset="./images/play02-sm.jpg" media="(min-width:768px)">
+          <img src="./images/play02-xs.jpg" alt="">
+        </picture>
+        <div class="carousel-caption">
+          <h2>第二部分</h2>
+          <p>
+            罪婵俭车卞爻故才笔于他有为主将，能系使派了力一者饮主，今不司斗自，然将尚文就面密极此我，君快无逃罪法，说争是彷承，入反愿和这欲相雷的着，长却则第，就德木面只决盲洪于高，韩冷吴措恶我太要故，二向杨可作王金是夹韩天，侯但毒，厅德王了得的相高少，秦使火了才，在。
+          </p>
+        </div>
+      </div>
+
+      <!-- （3） -->
+      <div class="item">
+        <picture>
+          <source srcset="./images/play03.jpg" media="(min-width:992px)">
+          <source srcset="./images/play03-sm.jpg" media="(min-width:768px)">
+          <img src="./images/play03-xs.jpg" alt="">
+        </picture>
+        <div class="carousel-caption">
+          <h2>第三部分</h2>
+          <p>
+            而责远国吞家才么，勇他井六的救谢今才终肯五归苟的是善才，乌六谓不见太意劫绛长者且下呼是子同，这洪有读六不量后韩秦活我家传，是备之国入一自杨，量相呼即持到出要卅德即，五皇小我锐如人后狱之乐，小大商死才，王应就二老陛看夭么，人人为联久不子办马人即恨看程在，而。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 两边箭头 -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+  <!--3、主要内容 -->
+  <div class="main-content container">
+    <!-- 3.1路径导航 -->
+    <ol class="breadcrumb">
+      <li><a href="#">首页</a></li>
+      <li><a href="#">课程</a></li>
+      <li><a href="#">推荐课程</a></li>
+    </ol>
+
+    <!-- 3.2、课程列表 -->
+    <!-- 
+  超小屏幕 768px以下     一行一个   每个占12份  col-xs-*  *指数字
+  小屏幕 768px-992px    一行两个   每个占6份   col-sm-*
+  中等屏幕 992px-1200px 一行三个   每个占4份   col-md-*
+  大屏幕 1200px以上     一行四个   每个占3份   col-lg-*
+  -->
+    <div class="courses">
+      <div class="row" id="courseBox">
+        <!--栅格系统 -->
+        <!-- 第(1)个 -->
+        <!-- <div class="courses-item col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+            <img src="./images/BootStrap.jpg" alt="...">
+            <div class="caption">
+              <h3>BootStrap</h3>
+              <p>航生的人小学间命专县着则辜文。</p>
+              <p><a href="#" class="btn btn-success" role="button">立即购买</a>
+                <a href="#" class="btn btn-primary" role="button">在线试看</a>
+              </p> -->
+        <!-- 按钮颜色可以去全局css样式中选择 -->
+        <!-- </div>
+          </div>
+        </div> -->
+        <!-- 第(2)个 -->
+        <!-- <div class="courses-item col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+            <img src="./images/css.jpg" alt="...">
+            <div class="caption">
+              <h3>css</h3>
+              <p>卑谭迷人帝下愚沫，不在谢交极。</p>
+              <p><a href="#" class="btn btn-success" role="button">立即购买</a>
+                <a href="#" class="btn btn-primary" role="button">在线试看</a>
+              </p> -->
+        <!-- 按钮颜色可以去全局css样式中选择 -->
+        <!-- </div>
+          </div>
+        </div> -->
+        <!-- 第(3)个 -->
+        <!-- <div class="courses-item col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+            <img src="./images/html5.jpg" alt="...">
+            <div class="caption">
+              <h3>html5</h3>
+              <p>你内己，颜生不觉饮则可中的感。</p>
+              <p><a href="#" class="btn btn-success" role="button">立即购买</a>
+                <a href="#" class="btn btn-primary" role="button">在线试看</a>
+              </p>
+            </div>
+          </div>
+        </div> -->
+        <!-- 第(4)个 -->
+        <!-- <div class="courses-item col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+            <img src="./images/Ajax.jpg" alt="...">
+            <div class="caption">
+              <h3>Ajax</h3>
+              <p>其则公非壬，商头属，评我谭游。</p>
+              <p><a href="#" class="btn btn-success" role="button">立即购买</a>
+                <a href="#" class="btn btn-primary" role="button">在线试看</a>
+              </p>
+            </div>
+          </div>
+        </div> -->
+        <!-- 第(5)个 -->
+        <!-- <div class="courses-item col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+            <img src="./images/js.jpg" alt="...">
+            <div class="caption">
+              <h3>js</h3>
+              <p>同正冇小迷答有若，不皇孔，回。</p>
+              <p><a href="#" class="btn btn-success" role="button">立即购买</a>
+                <a href="#" class="btn btn-primary" role="button">在线试看</a>
+              </p>
+            </div>
+          </div>
+        </div> -->
+        <!-- 第(6)个 -->
+        <!-- <div class="courses-item col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+            <img src="./images/js高级.jpg" alt="...">
+            <div class="caption">
+              <h3>js高级</h3>
+              <p>褒上血未过是他冇今人，同能者。</p>
+              <p><a href="#" class="btn btn-success" role="button">立即购买</a>
+                <a href="#" class="btn btn-primary" role="button">在线试看</a>
+              </p>
+            </div>
+          </div>
+        </div> -->
+        <!-- 第(7)个 -->
+        <!-- <div class="courses-item col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+            <img src="./images/Less.jpg" alt="...">
+            <div class="caption">
+              <h3>less</h3>
+              <p>没时终历我年不，他才清王，色。</p>
+              <p><a href="#" class="btn btn-success" role="button">立即购买</a>
+                <a href="#" class="btn btn-primary" role="button">在线试看</a>
+              </p>
+            </div>
+          </div>
+        </div> -->
+        <!-- 第(8)个 -->
+        <!-- <div class="courses-item col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+            <img src="./images/npm.png" alt="...">
+            <div class="caption">
+              <h3>npm</h3>
+              <p>娘学失种居你而偶重生下未领入。</p>
+              <p><a href="#" class="btn btn-success" role="button">立即购买</a>
+                <a href="#" class="btn btn-primary" role="button">在线试看</a>
+              </p>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+    <!-- 3.3分页 -->
+    <nav aria-label="Page navigation">
+      <ul class="pagination" id="pageBox">
+        <!-- <li>
+          <a href="#" aria-label="Previous" data-page="${i}">
+            <span aria-hidden="true">上一页</span>
+          </a>
+        </li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">下一页</span>
+          </a>
+        </li> -->
+      </ul>
+    </nav>
+  </div>
+
+  <!--4、页脚 -->
+  <footer class="page-footer">
+    <div class="container">
+      <!-- 
+        超小屏幕 768px以下 一行一个 12份 col-xs-*
+        小屏幕  768px-992px 一行两个 6份 col-sm-*
+        中等屏幕以上 992px 一行四个 3份 col-md-*
+       -->
+      <div class="footer-nav">
+        <div class="row">
+          <!-- 1 -->
+          <div class="col-sm-6 col-md-3">
+            <h3>用户</h3>
+            <ul>
+              <li>
+                <a href="#">账户个人资料</a>
+              </li>
+              <li>
+                <a href="#">下载中心</a>
+              </li>
+              <li>
+                <a href="#">账单跟踪</a>
+              </li>
+              <li>
+                <a href="#">用户评价</a>
+              </li>
+            </ul>
+          </div>
+          <!-- 2 -->
+          <div class="col-sm-6 col-md-3">
+            <h3>用户</h3>
+            <ul>
+              <li>
+                <a href="#">账户个人资料</a>
+              </li>
+              <li>
+                <a href="#">下载中心</a>
+              </li>
+              <li>
+                <a href="#">账单跟踪</a>
+              </li>
+              <li>
+                <a href="#">用户评价</a>
+              </li>
+            </ul>
+          </div>
+          <!-- 3 -->
+          <div class="col-sm-6 col-md-3">
+            <h3>用户</h3>
+            <ul>
+              <li>
+                <a href="#">账户个人资料</a>
+              </li>
+              <li>
+                <a href="#">下载中心</a>
+              </li>
+              <li>
+                <a href="#">账单跟踪</a>
+              </li>
+              <li>
+                <a href="#">用户评价</a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div class="footer-copyright">
+        &copy; 2020级计算机科学与技术本科班 王雨秋
+      </div>
+    </div>
+  </footer>
+
+  <!-- 5、模态框 -->
+  <div class="modal fade" tabindex="-1" role="dialog" id="loginModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">登录</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="form-group">
+              <label for="exampleInputEmail1">邮箱</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">密码</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox">记住密码
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          <button type="button" class="btn btn-primary">登录</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
+
+  <!-- 6、引入js脚本 -->
+  <script src="./js/jquery-1.12.4.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./js/axios.min.js"></script>
+
+  <script>
+    (() => {
+      //给每个页码监听事件
+      $('#pageBox').on('click', 'a', function (event) {
+        getCourse(this.dataset.page);
+        event.preventDefault();//阻止浏览器默认行为
+      });
+
+      getCourse();
+      //获取课程信息，参数1.第几页的数据，默认值是1；参数2是每页多少数据，默认值是8
+      function getCourse(no = 1, size = 8) {
+
+        //向后端api发送ajax请求,拿数据
+        axios
+          .get('http://api.fuming.site:54254/course', {
+            params: {
+              pageNo: no,
+              pageSize: size
+            }
+          })
+
+          //对数据处理，用map
+          .then(res => {
+            console.log(res.data);
+            // 课程列表信息
+            const htmlData = res.data.data.map(item =>
+              `<div class="courses-item col-sm-6 col-md-4 col-lg-3">
+          <div class="thumbnail">
+            <img src="${item.img}" alt="...">
+            <div class="caption">
+              <h5>${item.title}</h5>
+              <p>
+                <a href="#" class="btn btn-success" role="button">立即购买</a>
+                <a target="_blank" href="${item.href}" class="btn btn-info" role="button">在线试看</a>
+              </p>
+            </div>
+          </div>
+        </div>`
+            ).join('');
+            $('#courseBox').html(htmlData);
+
+            //分页信息
+            let pageData = `<li>
+                    <a href="#" aria-label="Previous" data-page="${res.data.pageNo-1}">
+                        <span aria-hidden="true">上一页</span>
+                    </a>
+                </li>`;
+            //设置选中
+            for (let i = 1; i <= res.data.pageSum; i++) {
+              pageData += `<li class="${i === res.data.pageNo ? 'active' : ''}">
+                <a href="#" data-page="${i}">${i}</a></li>`;
+            }
+
+            pageData += `<li>
+                    <a href="#" aria-label="Next" data-page="${res.data.pageNo+1}">
+                        <span aria-hidden="true">下一页</span>
+                    </a>
+                </li>`
+
+            $('#courseBox').html(htmlData);
+            $('#pageBox').html(pageData);
+
+          })
+      }
+
+
+    })();
+  </script>
+
+</body>
+
+</html>
